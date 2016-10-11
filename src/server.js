@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 
 
 app.use('/', (req, res) => {
-  res.send('Hello World!')
+  res.render('main')
 })
 
  // 404 Handler
