@@ -1,0 +1,31 @@
+{
+  "name": "seterm",
+  "version": "0.1.0",
+  "description": "Sofware Engineeing Term Project",
+  "main": "src/server.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "monitor": "nodemon src/server.js",
+    "start": "GCLOUD_PROJECT=jobshopper-test1 node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ywryoo@github.com/ywryoo/SoftwareEngineeringTerm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ywryoo/SoftwareEngineeringTerm/issues"
+  },
+  "homepage": "https://github.com/ywryoo/SoftwareEngineeringTerm#readme",
+  "dependencies": {
+    "@google/cloud-debug": "^0.8.5",
+    "@google/cloud-trace": "^0.5.8",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.0"
+  }
+}
