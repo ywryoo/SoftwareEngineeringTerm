@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>content-detail</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse" style="position: fixed; width: 100%; z-index: 9999">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#" style="color: white;">JopShopper</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+		    <li><a href="/list?user=<%=user%>">Home</a></li>
+		    <li><a href="/index">JOB FINDING</a></li>
+		    <li class="active"><a href="/list?user=<%=user%>">JOB CONTENT</a></li>
+		    <li><a href="/analysis?user=<%=user%>">ANALYSIS</a></li>
+		    </ul>
+		    <!--ul class="nav navbar-nav navbar-right">
+		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		      <li><a href="./login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		  	</ul-->
+		  </div>
+		</nav>
+
+	<div style="text-align:center;margin:0 auto; padding-top: 10vh;">
+		<%for(var i=1;i<=picnum;i++){
+			%>
+			<div style="display:block;"><img border="0" src ="/content/<%=pic%>/슬라이드<%=i%>.png"></div>
+		<%}%>
+	</div>
+	<div style="text-align:center;margin:20px;">
+		<form action="/userPoint" method="post" style="display:inline-block">
+			<input type="hidden" name = "mode" value="2"/>
+			<input type="hidden" name = "user" value="<%=user%>"/>
+			<%for(var i=0;i<28;i++)
+			{%>
+				<input type="hidden" name="point[<%=user%>]" value="<%=point[i]%>"/>
+			<%}
+			%>
+			<button type="submit" class = "btn btn-primary">이 직업 좋아요</button>
+		</form>
+		<form action="/userPoint" method="post" style="display:inline-block">
+			<input type="hidden" name = "mode" value="2"/>
+			<input type="hidden" name = "user" value="<%=user%>"/>
+			<%for(var i=0;i<28;i++)
+			{%>
+				<input type="hidden" name="point[<%=user%>]" value="<%=point[i]/5%>"/>
+			<%}
+			%>
+			<button type="submit" class="btn btn-primary">이 직업 별로에요</button>
+		</form>
+</div>
+
+</body>
+</body>
+</html>

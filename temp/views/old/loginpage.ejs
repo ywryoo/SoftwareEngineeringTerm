@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/stylesheets/commonStyle.css" />
+        <title>SWLecture</title>
+    </head>
+    <body style="text-align:center;width:100%">
+        <div style="background-color:#EEEEEE;width:1000px;height:500px;color:#002B82;position:reletive;padding:25px;left:0px;text-align:center;display:inline-block;margin:30px 10px;border-radius:10px;" >
+            <div style="display:inline-block;line-height:60px;vertical-align:middle;font-size:30px;" class="logo"><!--패딩 30px을 먹어서 line - height 가 30px이 된다.-->
+                <a href="/">SWLecture</a>
+            </div>
+            <h2 style="margin:50px 0px;">로그인이 필요합니다</br/>올바른 아이디/비밀번호를 입력 하세요</h2>
+            <%if(user){%>
+            <div style="position:absolute;right:10px;display:inline-block;height:100%;line-height:60px;vertical-align:middle"><!--얜 position:absolute가 있다!-->
+                <span style="display:inline-block;padding-right:10px;"><%=user.nickname%>님 환영합니다 !</span>
+                <a href="/logout"><button class="headerBtn"><span>로그아웃</span></button></a>
+            </div>
+            <%} else {%>
+            <div style="display:inline-block;height:100%;margin:100px 10px;">
+                <form class="login_form" action="/login" method="post">
+                    Email : <input type="text" style="width:180px;margin-right:10px;" id="idInput" name="idInput"/>
+                    Password : <input type="password" style="width:140px;margin-right:10px;" id="pwInput" name="pwInput"/>
+                    <button type="submit" class="headerBtn"><span>Sign in</span></button>
+                </form>
+                계정이 없으면 가입하세요! ㅎㅎ →
+                <a style="float:right"href="/users/new"><button class="headerBtn"><span>Create account</span></button></a>
+            </div>
+            <%}%>
+        </div>
+
+    </body>
+</html>
