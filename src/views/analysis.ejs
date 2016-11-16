@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- start: Meta -->
+	<meta charset="utf-8">
+	<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+	<meta name="description" content="Bootstrap Metro Dashboard">
+	<meta name="author" content="Dennis Ji">
+	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+	<!-- end: Meta -->
+
+	<!-- <link id="bootstrap-style" href="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/css/bootstrap.min.css" rel="stylesheet"> -->
+	<link href="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link id="base-style" href="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/css/style.css" rel="stylesheet">
+	<link id="base-style-responsive" href="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/css/style-responsive.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+
+	<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale =1;, maximum-scale = 1, user-scalable = no">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!--[if lte IE 8]><script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/css/ie8.css" /><![endif]-->
+
+	    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- end: CSS -->
+
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link id="ie-style" href="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/css/ie.css" rel="stylesheet">
+	<![endif]-->
+
+	<!--[if IE 9]>
+		<link id="ie9style" href="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/css/ie9.css" rel="stylesheet">
+	<![endif]-->
+
+	<!-- start: Favicon -->
+	<link rel="shortcut icon" href="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/favicon.ico">
+	<!-- end: Favicon -->
+
+
+
+
+</head>
+
+<body style="background-color: white; background-image: none;">
+		<nav class="navbar navbar-inverse" style="position: fixed; width: 100%; z-index: 9999">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#" style="color: white;">JopShopper</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+		    <li><a href="/list?user=<%=user%>">Home</a></li>
+		    <li><a href="/index">JOB FINDING</a></li>
+		    <li><a href="/list?user=<%=user%>">JOB CONTENT</a></li>
+		    <li class="active"><a href="/analysis?user=<%=user%>">ANALYSIS</a></li>
+		    </ul>
+		    <!--ul class="nav navbar-nav navbar-right">
+		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		      <li><a href="./login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		  	</ul-->
+		  </div>
+		</nav>
+
+		<div class="container-fluid-full" style="height: 250vh; width: 100vw; padding: 10vh;">
+			<div class="row-fluid">
+			<h2 style="color:gray; font-size: 18px; line-height: 16px;"><span class="glyphicons globe" style="color: gray;"><i></i></span> Inho's Interest</h2>
+			<hr>
+			<img src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/study.jpg" class="img-circle" style="padding: 1px; border:1px solid gray; width: 30vh; height: 30vh; margin-left: 5vw; margin-right: 5vh; margin-top: 10vh;">
+			<img src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/inve2.jpg" class="img-circle" style="padding: 1px; border:1px solid gray; width: 30vh; height: 30vh; margin-right: 5vh;">
+			<img src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/social3.jpg" class="img-circle" style="padding: 1px; border:1px solid gray; width: 30vh; height: 30vh; margin-right: 5vh;">
+
+
+			<div class="alert alert-warning" style="margin-top: 15vh;">
+  				<strong><%=interest[0].key%> : </strong> Enterprising occupations frequently involve starting up and carrying out projects. These occupations can involve leading people and making many decisions. Sometimes they require risk taking and often deal with business. (<%=interest[0].value%>)
+
+			</div>
+			<div class="alert alert-warning">
+  				<strong><%=interest[1].key%> : </strong> Conventional occupations frequently involve following set procedures and routines. These occupations can include working with data and details more than with ideas. Usually there is a clear line of authority to follow. (<%=interest[1].value%>)
+
+			</div>
+			<div class="alert alert-warning" style="margin-bottom: 15vh;">
+  				<strong><%=interest[2].key%> : </strong>  Social occupations frequently involve working with, communicating with, and teaching people. These occupations often involve helping or providing service to others. (<%=interest[2].value%>)
+			</div>
+
+
+	<!--여기서 부터 원형 그래프 -->
+			<h2 style="color:gray; font-size: 18px; line-height: 16px;"><span class="glyphicons globe" style="color: gray;"><i></i></span> Inho's Work Styles</h2>
+					<hr>
+			<div class="row-fluid hideInIE8 circleStats" style="margin-bottom: 5vh; border-style: solid;">  <!--이게 원형그래프 담는 div-->
+				<div class="span2" onTablet="span4" onDesktop="span2" style="height: 25vh; width: 18vw;">
+                	<div class="circleStatsItemBox red" style="height: 25vh; width: 18vw;">
+						<div class="header" style="height: 15%;" ><%=workst[0].key%></div>
+						<span class="percent">point</span>
+						<div class="circleStat" style="height: 70%; padding-top: 5%;">
+                    		<input type="text" value="<%=workst[0].value%>" class="whiteCircle"/>
+						</div>
+						<div class="footer" style="height: 15%;">
+							<span class="count">
+								<span class="number"><%=workst[0].value%></span>
+								<span class="unit">Point</span>
+							</span>
+							<span class="sep"> / </span>
+							<span class="value">
+								<span class="number">100</span>
+								<span class="unit">Point</span>
+							</span>
+						</div>
+                	</div>
+				</div>
+
+				<div class="span2" onTablet="span4" onDesktop="span2" style="height: 25vh; width: 18vw;">
+                	<div class="circleStatsItemBox yellow" style="height: 25vh; width: 18vw;">
+						<div class="header" style="height: 15%;" ><%=workst[1].key%></div>
+						<span class="percent">Point</span>
+						<div class="circleStat" style="height: 70%; padding-top: 5%;">
+                    		<input type="text" value="<%=workst[1].value%>" class="whiteCircle"/>
+						</div>
+						<div class="footer" style="height: 15%;">
+							<span class="count">
+								<span class="number"><%=workst[1].value%></span>
+								<span class="unit">Point</span>
+							</span>
+							<span class="sep"> / </span>
+							<span class="value">
+								<span class="number">100</span>
+								<span class="unit">Point</span>
+							</span>
+						</div>
+                	</div>
+				</div>
+				<div class="span2" onTablet="span4" onDesktop="span2" style="height: 25vh; width: 18vw;">
+                	<div class="circleStatsItemBox orange" style="height: 25vh; width: 18vw;">
+						<div class="header" style="height: 15%;" ><%=workst[2].key%></div>
+						<span class="percent">Point</span>
+						<div class="circleStat" style="height: 70%; padding-top: 5%;">
+                    		<input type="text" value="<%=workst[2].value%>" class="whiteCircle"/>
+						</div>
+						<div class="footer" style="height: 15%;">
+							<span class="count">
+								<span class="number"><%=workst[2].value%></span>
+								<span class="unit">Point</span>
+							</span>
+							<span class="sep"> / </span>
+							<span class="value">
+								<span class="number">100</span>
+								<span class="unit">Point</span>
+							</span>
+						</div>
+                	</div>
+				</div>
+				<div class="span2" onTablet="span4" onDesktop="span2" style="height: 25vh; width: 18vw;">
+                	<div class="circleStatsItemBox green" style="height: 25vh; width: 18vw;">
+						<div class="header" style="height: 15%;" ><%=workst[3].key%></div>
+						<span class="percent">Point</span>
+						<div class="circleStat" style="height: 70%; padding-top: 5%;">
+                    		<input type="text" value="<%=workst[3].value%>" class="whiteCircle"/>
+						</div>
+						<div class="footer" style="height: 15%;">
+							<span class="count">
+								<span class="number"><%=workst[3].value%></span>
+								<span class="unit">Point</span>
+							</span>
+							<span class="sep"> / </span>
+							<span class="value">
+								<span class="number">100</span>
+								<span class="unit">Point</span>
+							</span>
+						</div>
+                	</div>
+				</div>
+			</div>
+
+			<div class="row-fluid" style="margin-top: 15vh;">
+				<div class="widget blue span5" onTablet="span6" onDesktop="span5" style="width: 87.5%; height: 50%;">
+					<h2><span class="glyphicons globe" style="line-height: 0"><i></i></span> Inho's Work Values</h2>
+					<hr>
+					<div class="content">
+						<div class="verticalChart">
+							<div class="singleBar">
+								<div class="bar">
+									<div class="value">
+										<span><%=workval[0].value%>%</span>
+									</div>
+								</div>
+								<div class="title"><%=workval[0].key%> </div>
+							</div>
+
+							<div class="singleBar">
+								<div class="bar">
+									<div class="value">
+										<span><%=workval[1].value%>%</span>
+									</div>
+								</div>
+								<div class="title"><%=workval[1].key%> </div>
+							</div>
+
+							<div class="singleBar">
+
+								<div class="bar">
+
+									<div class="value">
+										<span><%=workval[2].value%>%</span>
+									</div>
+
+								</div>
+
+								<div class="title"><%=workval[2].key%> </div>
+
+							</div>
+
+							<div class="singleBar">
+
+								<div class="bar">
+
+									<div class="value">
+										<span><%=workval[3].value%>%</span>
+									</div>
+
+								</div>
+
+								<div class="title"><%=workval[3].key%> </div>
+
+							</div>
+
+
+							<div class="clearfix"></div>
+						</div>
+					</div>
+						<div class="alert alert-info" style="margin-top: 100px;">
+ 					 		<strong><%=workval[0].key%>  : </strong> Occupations that satisfy this work value allow employees to work on their own and make decisions. Corresponding needs are Creativity, Responsibility and Autonomy.
+						</div>
+						<div class="alert alert-info">
+ 					 		<strong><%=workval[1].key%>  : </strong> Occupations that satisfy this work value offer advancement, potential for leadership, and are often considered prestigious. Corresponding needs are Advancement, Authority, Recognition and Social Status.
+						</div>
+
+						<div class="alert alert-info">
+ 					 		<strong><%=workval[2].key%>  : </strong> Occupations that satisfy this work value are results oriented and allow employees to use their strongest abilities, giving them a feeling of accomplishment. Corresponding needs are Ability Utilization and Achievement.
+						</div>
+
+						<div class="alert alert-info" style="margin-bottom:100px;padding-bottom20px;">
+ 					 		<strong><%=workval[3].key%>  : </strong> Occupations that satisfy this work value offer job security and good working conditions. Corresponding needs are Activity, Compensation, Independence, Security, Variety and Working Conditions.
+						</div>
+
+				</div><!--/span-->
+
+			</div>
+
+	</div><!--/.fluid-container-->
+			<!-- end: Content -->
+		</div><!--/#content.span10-->
+		</div><!--/fluid-row-->
+	<!-- start: JavaScript-->
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery-1.9.1.min.js"></script>
+	<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery-migrate-1.0.0.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery-ui-1.10.0.custom.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.ui.touch-punch.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/modernizr.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/bootstrap.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.cookie.js"></script>
+
+		<script src='https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/fullcalendar.min.js'></script>
+
+		<script src='https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.dataTables.min.js'></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/excanvas.js"></script>
+	<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.flot.js"></script>
+	<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.flot.pie.js"></script>
+	<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.flot.stack.js"></script>
+	<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.flot.resize.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.chosen.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.uniform.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.cleditor.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.noty.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.elfinder.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.raty.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.iphone.toggle.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.uploadify-3.1.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.gritter.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.imagesloaded.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.masonry.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.knob.modified.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/jquery.sparkline.min.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/counter.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/retina.js"></script>
+
+		<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/js/custom.js"></script>
+	<!-- end: JavaScript-->
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<!--
+	Overflow by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Making Choice</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/css/ie8.css" /><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale =1;, maximum-scale = 1, user-scalable = no">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+function getXMLhttp(){
+	var xmlhttp;
+		if (window.XMLHttpRequest) { // 모질라, 사파리등 그외 브라우저, ...
+		    xmlhttp = new XMLHttpRequest();
+		} else if (window.ActiveXObject) { // IE 8 이상
+			try {
+				httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+			}
+			catch(e){
+				try{
+					httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				catch (e) {}
+			}
+		}
+	return xmlhttp;
+}
+function jobOnClick(jobnum)
+{
+	try{
+		var xmlhttp = getXMLhttp();
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4) {
+				if(xmlhttp.status == 200){
+					var result = xmlhttp.responseText;
+					if (result == "Y") {
+						hide("cbox"+comnm);
+					}
+				}
+			}
+		};
+		xmlhttp.open("GET",'/userPoint?mode=3&user=<%=user%>&jobnum='+jobnum,true);//+"&r="+Math.random()
+		xmlhttp.send(null);
+	} catch(e)
+	{
+		alert(e);
+	}
+}
+</script>
+
+
+	</head>
+	<body scroll="no" style=" overflow: hidden;">
+		<nav class="navbar navbar-inverse" style="position: fixed; width: 100%; z-index: 9999">
+		  <div class="container-fluid">
+		    <ul class="nav navbar-nav">
+		    <li><a href="#">Please chicoe a job between two suggested options!</a></li>
+		    </ul>
+		  </div>
+		</nav>
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<h1>Job Finding</h1>
+					<p>By MAKING CHOICE</p>
+				</header>
+				<footer>
+					<a href="#banner" class="button style2 scrolly-middle">START NOW!</a>
+				</footer>
+			</section>
+
+		<!-- Banner -->
+			<section id="banner" style="height: 100vh; padding-top: 300px;"> <!-- 여기가 사이즈-->
+				<header>
+					<h1>READ ME</h1>
+				</header>
+				<p>지금부터 여러분은 10번의 직업 선택 기회가 주어집니다.  </p>
+				<p>2개의 직업 중 자신이 더 선호하는 직업을 선택해주세요!</p>
+				<p>이 데이터를 기반으로 <strong class="middeltext">JopShopper</strong>는 <strong class="middeltext">Machine Learning</strong> 기반의</p>
+				<p>분석알고리즘으로 정확한 직업추천을 해드립니다.</p>
+				<footer>
+					<a href="#first" class="button style2 scrolly-middle">Next Process</a>
+				</footer>
+			</section>
+
+		<!-- Feature 1 -->
+		<div id="first" class="bigdiv">
+			<div class="middiv" style="background-color: white;">
+				<a href="#second" class="scrolly-middle" onclick="jobOnClick(0)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/CEO.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">CEO (Chief Executive Officer)</h2><br>
+						<p class="whitebox">
+							The chief executive officer, or CEO, is the top position in an organization and is responsible for implementing existing plans and policies, ensuring the successful management of the business and setting future strategy.
+						</p>
+					</div>
+				</a>
+
+			</div>
+			<div class="middiv" style="background-color: white;">
+				<a href="#second" class="scrolly-middle" onclick="jobOnClick(1)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/foodstylist.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Food Stylist</h2><br>
+						<p class="whitebox">
+							A food stylist is a culinary professional whose job is to prepare food for photography, video or film. Making food photogenic is no easy task, and the best food stylists come to the job armed with an array of techniques to make meals look their best.
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- Feature 2 -->
+		<div id="second" class="bigdiv">
+			<div class="middiv" style="background-color: white;">
+				<a href="#third" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/semiconductor_engineer.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Semiconductor engineer</h2><br>
+						<p class="whitebox">
+							Semiconductor engineers are basically electronic engineers working in the semiconductor field. These devices conduct heat between an insulator and a conductor. They are essential parts of electronic equipment and play a large part in computer operations. Semiconductor engineers are responsible for designing, testing, and implementing semiconductors.
+						</p>
+					</div>
+				</a>
+
+			</div>
+			<div class="middiv" style="background-color: white; ">
+				<a href="#third" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Intelligent_Transport_System_Expert.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Intelligent Transport System Expert</h2><br>
+						<p class="whitebox">
+							Intelligent transportation systems (ITS) are advanced applications which, without embodying intelligence as such, aim to provide innovative services relating to different modes of transport and traffic management and enable various users to be better informed and make safer, more coordinated, and 'smarter' use of transport networks.
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- Feature 3 -->
+		<div id="third" class="bigdiv">
+			<div class="middiv" style="background-color: white;">
+				<a href="#forth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Game_Planner.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Game Planner</h2><br>
+						<p class="whitebox">
+							A game planner makes game scenarios in consideration of marketability and players' emotions. A game planner decides type, usage, era setting and a game's theme and makes them in written form. Then, he/she discusses the scenario with other members of the game project team including a graphic designer, a computer programer and a person in charge of sound.
+						</p>
+					</div>
+				</a>
+
+			</div>
+			<div class="middiv" style="background-color: white;">
+				<a href="#forth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Accountant.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Accountant</h2><br>
+						<p class="whitebox">
+							The primary task of accountants, which extends to all the others, is to prepare and examine financial records. They make sure that records are accurate and that taxes are paid properly and on time. Accountants and auditors perform overviews of the financial operations of a business in order to help it run efficiently.
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- Feature 4 -->
+		<div id="forth" class="bigdiv">
+			<div class="middiv" style="background-color: white;">
+				<a href="#fifth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Fashion_Designer.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Fashion Designer</h2><br>
+						<p class="whitebox">
+							Fashion designers study trends and sketch the initial clothing or accessory design. They attend trade shows or visit manufacturers to select fabrics and trims. Designers conduct fittings and adjustments on prototypes of their designs, and the end product is then marketed to clothing retailers.
+						</p>
+					</div>
+				</a>
+
+			</div>
+			<div class="middiv" style="background-color: white;">
+				<a href="#fifth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Aircraft_Mechanic.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Aircraft Mechanic</h2><br>
+						<p class="whitebox">
+							Today’s airplanes are highly complex machines that require reliable parts and service to fly safely. To keep an airplane in peak operating condition, aircraft mechanics do scheduled maintenance, make repairs, and complete inspections. Some aircraft mechanics work on many different types of aircraft, such as jets, propeller-driven airplanes, and helicopters.
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- Feature 5 -->
+		<div id="fifth" class="bigdiv">
+			<div class="middiv" style="background-color: white;">
+				<a href="#sixth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Virtual_Reality_Expert.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Virtual Reality Expert</h2><br>
+						<p class="whitebox">
+							Virtual reality (VR) typically refers to computer technologies that use software to generate realistic images, sounds and other sensations that replicate a real environment, and simulate a user's physical presence in this environment, by enabling the user to interact with this space and any objects depicted therein using specialized display screens or projectors and other devices.
+						</p>
+					</div>
+				</a>
+
+			</div>
+			<div class="middiv" style="background-color: white;">
+				<a href="#sixth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Diplomat.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Diplomat</h2><br>
+						<p class="whitebox">
+							A diplomat is someone who is appointed by a nation state to represent and protect that nation's interests abroad. The four ranks of diplomats are determined by international law, and include ambassadors, envoys, ministers, and charge d'affaires. In modern diplomacy there are a number of ranks below ambassador.
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- Feature 6 -->
+		<div id="sixth" class="bigdiv">
+			<div class="middiv" style="background-color: white;">
+				<a href="#seventh" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/AdvertisementD.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Advertisement Designer</h2><br>
+						<p class="whitebox">
+							An advertising designer may choose to work within several media, such as in print or Web. They research trends to see what works for customers. Ad designers must have a keen eye for details and a creative mind. They are required to adhere to strict deadlines and may be required to work irregular hours.
+						</p>
+					</div>
+				</a>
+
+			</div>
+			<div class="middiv" style="background-color: white;">
+				<a href="#seventh" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/LED_Product_Developer.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">LED Product Developer</h2><br>
+						<p class="whitebox">
+							A light-emitting diode (LED) is a two-lead semiconductor light source. It is a p–n junction diode, which emits light when activated. When a suitable voltage is applied to the leads, electrons are able to recombine with electron holes within the device, releasing energy in the form of photons.
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- Feature 7 -->
+		<div id="seventh" class="bigdiv">
+			<div class="middiv" style="background-color: white;">
+				<a href="#eightth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Car_Engineer.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Car Engineer</h2><br>
+						<p class="whitebox">
+							Automotive engineers design the systems and mechanisms of cars. These professionals ensure that automotive designs and systems conform to budgeted quality and cost specifications. Similar to other types of mechanical engineers, automotive engineers analyze potential problems in design and work to solve those problems, design and retest prototypes of cars and car parts, and oversee the manufacturing of automotives.
+						</p>
+					</div>
+				</a>
+
+			</div>
+			<div class="middiv" style="background-color: white;">
+				<a href="#eightth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Electironic_Bicycle_Engineer.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Electironic Bicycle Engineer</h2><br>
+						<p class="whitebox">
+							An electric bicycle, also known as an e-bike or booster bike, is a bicycle with an integrated electric motor which can be used for propulsion. There are a great variety of e-bikes available worldwide, from e-bikes that only have a small motor to assist the rider's pedal-power (i.e., pedelecs) to somewhat more powerful e-bikes which tend closer to moped-style functionality
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- Feature 8 -->
+		<div id="eightth" class="bigdiv">
+			<div class="middiv" style="background-color: white;">
+				<a href="#ninth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Analyst.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Analyst</h2><br>
+						<p class="whitebox">
+							As a market analyst your job is to study information to help your employer or client make informed decisions about their market. This could range from what markets to launch a product in, to the price you might charge for something.
+						</p>
+					</div>
+				</a>
+
+			</div>
+			<div class="middiv" style="background-color: white;">
+				<a href="#ninth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Satelite_Developer.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Satellite Developer</h2><br>
+						<p class="whitebox">
+							 A satellite is an artificial object which has been intentionally placed into orbit. Such objects are sometimes called artificial satellites to distinguish them from natural satellites such as Earth's Moon. Satellite developer deal with this.
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- Feature 9 -->
+		<div id="ninth" class="bigdiv">
+			<div class="middiv" style="background-color: white;">
+				<a href="#tenth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/AI_Expert.jpg" alt="" onclick=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">AI_Expert</h2><br>
+						<p class="whitebox">
+							Artificial intelligence (AI) is intelligence exhibited by machines. In computer science, an ideal "intelligent" machine is a flexible rational agent that perceives its environment and takes actions that maximize its chance of success at some goal.
+						</p>
+					</div>
+				</a>
+
+			</div>
+			<div class="middiv" style="background-color: white;">
+				<a href="#tenth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Architect.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Architect</h2><br>
+						<p class="whitebox">
+							Architects design all kinds of buildings. They design schools and skyscrapers. They design hospitals and hotels. They also design churches, train stations and plain old regular houses. Any building that is used by people was probably designed by some architect.
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- Feature 10 -->
+		<div id="tenth" class="bigdiv">
+			<div class="middiv" style="background-color: white;">
+				<a href="/list?user=<%=user%>" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Application_Developer.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Application Developer</h2><br>
+						<p class="whitebox">
+							 Application developer is someone who creates, tests and programs applications software for computers. Applications are used in almost every type of computer device, from desktops to handheld devices, and applications developers are the minds and fingers behind the greatest games, email and word processing functions that are available today.
+						</p>
+					</div>
+				</a>
+
+			</div>
+			<div class="middiv" style="background-color: white;">
+				<a href="/list?user=<%=user%>" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Art_Supervisor.jpg" alt=""/>
+					<div class="middivtext">
+						<h4 style="text-decoration: underline; font-weight: bold;">Art_Supervisor</h2><br>
+						<p class="whitebox">
+							Art director is the title for a variety of similar job functions in theater, advertising, marketing, publishing, fashion, film and television, the Internet, and video games. It is the charge of a sole art director to supervise and unify the vision. In particular, the art director is in charge of the overall visual appearance and how it communicates visually, stimulates moods, contrasts features, and psychologically appeals to a target audience.
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+			<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/js/jquery.min.js"></script>
+			<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/js/jquery.scrolly.min.js"></script>
+			<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/js/jquery.poptrox.min.js"></script>
+			<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/js/skel.min.js"></script>
+			<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/assets/js/main.js"></script>
+			<script type="text/javascript">
+				window.onwheel = function(){ return false; }
+			</script>
+			</body>
+</html>

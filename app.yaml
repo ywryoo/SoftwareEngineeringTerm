@@ -13,7 +13,7 @@
 #
 # [START runtime]
 runtime: nodejs
-vm: true
+env: flex
 threadsafe: yes
 # [END runtime]
 
@@ -33,7 +33,7 @@ resources:
 
 # [START scaling]
 automatic_scaling:
-  min_num_instances: 2
+  min_num_instances: 1
   max_num_instances: 5
   cool_down_period_sec: 120 # default value
   cpu_utilization:
