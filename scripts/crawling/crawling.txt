@@ -1,0 +1,114 @@
+import requests
+from pattern.web import Element
+
+url="https://www.onetonline.org/find/career?c=0&g=Go"
+main_html=requests.get(url).text
+element=Element(main_html)
+
+#메인 페이지에서 각 직업의 code저장
+job_code=[]
+for i in element.by_class('reportrtd'):
+     job_code.append(i.content)
+        
+
+####각 Jobcode를 통해서 해당 Job의 속성들 저장####
+###################################################
+all_info=[]
+count=0
+for i in job_code:
+    
+    print "##########"
+    count=count+1
+    print count
+    
+    dict_temp={}
+    url='http://www.onetonline.org/link/details/'
+    r_html=requests.get(url+i).text
+    element=Element(r_html)
+#    dict_temp=attributes
+ 
+    dict_temp={'Occupation_name':'' ,'Realistic':0,'Investigative':0,'Artistic':0,'Social':0,'Enterprising':0,
+           'Conventional':0, 'Achievement/Effort':0,'Adaptability/Flexibility':0,
+           'Analytical Thinking':0, 'Attention to Detail':0, 'Concern for Others':0,
+           'Cooperation':0, 'Dependability':0, 'Independence(Work Style)':0, 'Initiative':0, 
+           'Innovation':0, 'Integrity':0, 'Leadership':0, 'Persistence':0, 'Self Control':0,
+           'Social Orientation':0, 'Stress Tolerance':0, 'Achievement':0, 'Independence(Work Value)':0,
+           'Recognition':0, 'Relationships':0, 'Support':0, 'Working Conditions':0}
+    
+    title=str(element.by_class('titleb')[0].content[13:])
+    
+    print title
+    
+    dict_temp['Occupation_name']= title
+    summary=element.by_attr(summary="Occupational report details")
+    if summary:
+        for j in summary:
+            if "Interest" in j:
+                for point in range(len(j.by_class("report2a"))):
+                    if "<" in j.by_class("report2a")[point][0].content:
+                        real_point=j.by_class("report2a")[point][0][0].content
+                    else:
+                        real_point=j.by_class("report2a")[point][0].content
+                              
+                    dict_temp[str(j.by_class("report2")[point][0][0].content)]=real_point
+                
+            if "Work Style" in j:
+                for point in range(len(j.by_class("report2a"))):
+                    if "<" in j.by_class("report2a")[point][0].content:
+                        real_point=j.by_class("report2a")[point][0][0].content
+                    else:
+                        real_point=j.by_class("report2a")[point][0].content
+                                    
+                    if "Independence" in j.by_class("report2")[point][0][0].content:
+                        dict_temp["Independence(Work Style)"]=real_point
+
+                    else:
+                         dict_temp[str(j.by_class("report2")[point][0][0].content)]=real_point
+
+
+            if "Work Value" in j:
+                for point in range(len(j.by_class("report2a"))):
+                    if "<" in j.by_class("report2a")[point][0].content:
+                        real_point=j.by_class("report2a")[point][0][0].content
+                    else:
+                        real_point=j.by_class("report2a")[point][0].content
+                                
+                    if "Independence" in j.by_class("report2")[point][0][0].content:
+                        dict_temp["Independence(Work Value)"]=real_point
+                    else:
+                         dict_temp[str(j.by_class("report2")[point][0][0].content)]=real_point
+
+       
+        all_info.append(dict_temp)
+    else:
+        all_info.append(dict_temp)
+
+####################################################################
+
+
+#excel 형식으로 저장
+
+from xlsxwriter import Workbook
+
+Attr_list=['Occupation_name','Realistic','Investigative','Artistic','Social','Enterprising',
+           'Conventional', 'Achievement/Effort','Adaptability/Flexibility',
+           'Analytical Thinking', 'Attention to Detail', 'Concern for Others',
+           'Cooperation', 'Dependability', 'Independence(Work Style)', 'Initiative', 
+           'Innovation', 'Integrity', 'Leadership', 'Persistence', 'Self Control',
+           'Social Orientation', 'Stress Tolerance', 'Achievement', 'Independence(Work Value)',
+           'Recognition', 'Relationships', 'Support', 'Working Conditions']
+
+wb=Workbook("main_data3.xlsx")
+ws=wb.add_worksheet("Occupation_Attr")
+
+first_row=0
+for header in Attr_list:
+    col=Attr_list.index(header)
+    ws.write(first_row,col,header)
+row=1
+for data in all_info:
+    for _key,_value in data.items():
+        col=Attr_list.index(_key)
+        ws.write(row,col,_value)
+    row+=1
+wb.close()
