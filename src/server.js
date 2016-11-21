@@ -86,15 +86,15 @@ app.all('/userPoint',function(request,response){
         {
             if(data.point[request.user])
             {
-                return data.point;
+                response.send(data.point);
             }
             else {
                 var temp = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,];
                 data.point[request.user]=temp;
-                return data.point;
+                response.send(data.point);
             }
         }
-        else return data.point[0];
+        else response.send(data.point[0]);
     }
     else if(request.param("mode")==2)
     {
@@ -139,6 +139,7 @@ app.all('/userPoint',function(request,response){
                 }
             }
         }
+        response.send(true);
     }
 
 });

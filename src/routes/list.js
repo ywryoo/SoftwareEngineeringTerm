@@ -4,9 +4,10 @@ var data = require('./data');
 
 
 router.get('/list',function(request,response){
+    console.log("list 호출");
     var conPoint=data.conPoint;
     var jobName=data.jobName;
-    var listnum=4;
+    var listnum=12;
     var save=[];
     var place=[];
     var i,j;
@@ -15,6 +16,7 @@ router.get('/list',function(request,response){
         save[i]=10000;
         place[i]=0;
     }
+    console.log("계산 시작");
     if(request.param("user")) request.user = request.param("user");
     if(request.user)
     {
@@ -36,6 +38,7 @@ router.get('/list',function(request,response){
                 if(other[j]>my[j]) plus+=other[j]-my[j];
                 else plus+=my[j]-other[j];
             }
+            plus += Math.random() * 100;
             if(plus<save[max]){
                 save[max]=plus;
                 place[max]=i;
@@ -54,6 +57,7 @@ router.get('/list',function(request,response){
         });
     }
     else{
+        console.log("list - user이 없음");
         response.render('list',{
             user : 0,
             jobnum : place,

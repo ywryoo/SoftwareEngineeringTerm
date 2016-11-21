@@ -38,16 +38,13 @@ function getXMLhttp(){
 function jobOnClick(jobnum)
 {
 	try{
-		var xmlhttp = getXMLhttp();
+    var xmlhttp = getXMLhttp();
 		xmlhttp.onreadystatechange = function() {
-			if (xmlhttp.readyState == 4) {
-				if(xmlhttp.status == 200){
-					var result = xmlhttp.responseText;
-					if (result == "Y") {
-						hide("cbox"+comnm);
-					}
-				}
-			}
+			// if (xmlhttp.readyState == 4) {
+			// 	if(xmlhttp.status == 200){
+			// 		var result = xmlhttp.responseText;
+			// 	}
+			// }
 		};
 		xmlhttp.open("GET",'/userPoint?mode=3&user=<%=user%>&jobnum='+jobnum,true);//+"&r="+Math.random()
 		xmlhttp.send(null);
@@ -96,7 +93,7 @@ function jobOnClick(jobnum)
 		<!-- Feature 1 -->
 		<div id="first" class="bigdiv">
 			<div class="middiv" style="background-color: white;">
-				<a href="#second" class="scrolly-middle" onclick="jobOnClick(0)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/CEO.jpg" alt=""/>
+				<a href="#second" class="scrolly-middle" onclick="jobOnClick(50)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/CEO.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">CEO (Chief Executive Officer)</h2><br>
 						<p class="whitebox">
@@ -107,9 +104,9 @@ function jobOnClick(jobnum)
 
 			</div>
 			<div class="middiv" style="background-color: white;">
-				<a href="#second" class="scrolly-middle" onclick="jobOnClick(1)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/foodstylist.jpg" alt=""/>
+				<a href="#second" class="scrolly-middle" onclick="jobOnClick(28)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/foodstylist.jpg" alt=""/>
 					<div class="middivtext">
-						<h4 style="text-decoration: underline; font-weight: bold;">Food Stylist</h2><br>
+						<h4 style="text-decoration: underline; font-weight: bold;">Food Stylist</h4><br>
 						<p class="whitebox">
 							A food stylist is a culinary professional whose job is to prepare food for photography, video or film. Making food photogenic is no easy task, and the best food stylists come to the job armed with an array of techniques to make meals look their best.
 						</p>
@@ -120,9 +117,9 @@ function jobOnClick(jobnum)
 		<!-- Feature 2 -->
 		<div id="second" class="bigdiv">
 			<div class="middiv" style="background-color: white;">
-				<a href="#third" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/semiconductor_engineer.jpg" alt=""/>
+				<a href="#third" class="scrolly-middle" onclick="jobOnClick(34)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/semiconductor_engineer.jpg" alt=""/>
 					<div class="middivtext">
-						<h4 style="text-decoration: underline; font-weight: bold;">Semiconductor engineer</h2><br>
+						<h4 style="text-decoration: underline; font-weight: bold;">Semiconductor engineer</h4><br>
 						<p class="whitebox">
 							Semiconductor engineers are basically electronic engineers working in the semiconductor field. These devices conduct heat between an insulator and a conductor. They are essential parts of electronic equipment and play a large part in computer operations. Semiconductor engineers are responsible for designing, testing, and implementing semiconductors.
 						</p>
@@ -131,7 +128,7 @@ function jobOnClick(jobnum)
 
 			</div>
 			<div class="middiv" style="background-color: white; ">
-				<a href="#third" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Intelligent_Transport_System_Expert.jpg" alt=""/>
+				<a href="#third" class="scrolly-middle" onclick="jobOnClick(66)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Intelligent_Transport_System_Expert.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Intelligent Transport System Expert</h2><br>
 						<p class="whitebox">
@@ -144,7 +141,7 @@ function jobOnClick(jobnum)
 		<!-- Feature 3 -->
 		<div id="third" class="bigdiv">
 			<div class="middiv" style="background-color: white;">
-				<a href="#forth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Game_Planner.jpg" alt=""/>
+				<a href="#forth" class="scrolly-middle" onclick="jobOnClick(69)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Game_Planner.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Game Planner</h2><br>
 						<p class="whitebox">
@@ -155,7 +152,7 @@ function jobOnClick(jobnum)
 
 			</div>
 			<div class="middiv" style="background-color: white;">
-				<a href="#forth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Accountant.jpg" alt=""/>
+				<a href="#forth" class="scrolly-middle" onclick="jobOnClick(58)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Accountant.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Accountant</h2><br>
 						<p class="whitebox">
@@ -168,7 +165,7 @@ function jobOnClick(jobnum)
 		<!-- Feature 4 -->
 		<div id="forth" class="bigdiv">
 			<div class="middiv" style="background-color: white;">
-				<a href="#fifth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Fashion_Designer.jpg" alt=""/>
+				<a href="#fifth" class="scrolly-middle" onclick="jobOnClick(25)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Fashion_Designer.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Fashion Designer</h2><br>
 						<p class="whitebox">
@@ -179,7 +176,7 @@ function jobOnClick(jobnum)
 
 			</div>
 			<div class="middiv" style="background-color: white;">
-				<a href="#fifth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Aircraft_Mechanic.jpg" alt=""/>
+				<a href="#fifth" class="scrolly-middle" onclick="jobOnClick(49)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Aircraft_Mechanic.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Aircraft Mechanic</h2><br>
 						<p class="whitebox">
@@ -192,7 +189,7 @@ function jobOnClick(jobnum)
 		<!-- Feature 5 -->
 		<div id="fifth" class="bigdiv">
 			<div class="middiv" style="background-color: white;">
-				<a href="#sixth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Virtual_Reality_Expert.jpg" alt=""/>
+				<a href="#sixth" class="scrolly-middle" onclick="jobOnClick(68)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Virtual_Reality_Expert.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Virtual Reality Expert</h2><br>
 						<p class="whitebox">
@@ -203,7 +200,7 @@ function jobOnClick(jobnum)
 
 			</div>
 			<div class="middiv" style="background-color: white;">
-				<a href="#sixth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Diplomat.jpg" alt=""/>
+				<a href="#sixth" class="scrolly-middle" onclick="jobOnClick(55)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Diplomat.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Diplomat</h2><br>
 						<p class="whitebox">
@@ -216,7 +213,7 @@ function jobOnClick(jobnum)
 		<!-- Feature 6 -->
 		<div id="sixth" class="bigdiv">
 			<div class="middiv" style="background-color: white;">
-				<a href="#seventh" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/AdvertisementD.jpg" alt=""/>
+				<a href="#seventh" class="scrolly-middle" onclick="jobOnClick(2)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/AdvertisementD.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Advertisement Designer</h2><br>
 						<p class="whitebox">
@@ -227,7 +224,7 @@ function jobOnClick(jobnum)
 
 			</div>
 			<div class="middiv" style="background-color: white;">
-				<a href="#seventh" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/LED_Product_Developer.jpg" alt=""/>
+				<a href="#seventh" class="scrolly-middle" onclick="jobOnClick(59)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/LED_Product_Developer.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">LED Product Developer</h2><br>
 						<p class="whitebox">
@@ -240,7 +237,7 @@ function jobOnClick(jobnum)
 		<!-- Feature 7 -->
 		<div id="seventh" class="bigdiv">
 			<div class="middiv" style="background-color: white;">
-				<a href="#eightth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Car_Engineer.jpg" alt=""/>
+				<a href="#eightth" class="scrolly-middle"  onclick="jobOnClick(41)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Car_Engineer.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Car Engineer</h2><br>
 						<p class="whitebox">
@@ -251,7 +248,7 @@ function jobOnClick(jobnum)
 
 			</div>
 			<div class="middiv" style="background-color: white;">
-				<a href="#eightth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Electironic_Bicycle_Engineer.jpg" alt=""/>
+				<a href="#eightth" class="scrolly-middle"  onclick="jobOnClick(64)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Electironic_Bicycle_Engineer.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Electironic Bicycle Engineer</h2><br>
 						<p class="whitebox">
@@ -264,7 +261,7 @@ function jobOnClick(jobnum)
 		<!-- Feature 8 -->
 		<div id="eightth" class="bigdiv">
 			<div class="middiv" style="background-color: white;">
-				<a href="#ninth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Analyst.jpg" alt=""/>
+				<a href="#ninth" class="scrolly-middle" onclick="jobOnClick(54)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Analyst.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Analyst</h2><br>
 						<p class="whitebox">
@@ -275,7 +272,7 @@ function jobOnClick(jobnum)
 
 			</div>
 			<div class="middiv" style="background-color: white;">
-				<a href="#ninth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Satelite_Developer.jpg" alt=""/>
+				<a href="#ninth" class="scrolly-middle" onclick="jobOnClick(61)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Satelite_Developer.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Satellite Developer</h2><br>
 						<p class="whitebox">
@@ -288,7 +285,7 @@ function jobOnClick(jobnum)
 		<!-- Feature 9 -->
 		<div id="ninth" class="bigdiv">
 			<div class="middiv" style="background-color: white;">
-				<a href="#tenth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/AI_Expert.jpg" alt="" onclick=""/>
+				<a href="#tenth" class="scrolly-middle" onclick="jobOnClick(73)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/AI_Expert.jpg" alt="" onclick=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">AI_Expert</h2><br>
 						<p class="whitebox">
@@ -299,7 +296,7 @@ function jobOnClick(jobnum)
 
 			</div>
 			<div class="middiv" style="background-color: white;">
-				<a href="#tenth" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Architect.jpg" alt=""/>
+				<a href="#tenth" class="scrolly-middle" onclick="jobOnClick(30)"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Architect.jpg" alt=""/>
 					<div class="middivtext">
 						<h4 style="text-decoration: underline; font-weight: bold;">Architect</h2><br>
 						<p class="whitebox">
@@ -314,7 +311,7 @@ function jobOnClick(jobnum)
 			<div class="middiv" style="background-color: white;">
 				<a href="/list?user=<%=user%>" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Application_Developer.jpg" alt=""/>
 					<div class="middivtext">
-						<h4 style="text-decoration: underline; font-weight: bold;">Application Developer</h2><br>
+						<h4 style="text-decoration: underline; font-weight: bold;">Application Developer</h4><br>
 						<p class="whitebox">
 							 Application developer is someone who creates, tests and programs applications software for computers. Applications are used in almost every type of computer device, from desktops to handheld devices, and applications developers are the minds and fingers behind the greatest games, email and word processing functions that are available today.
 						</p>
@@ -325,7 +322,7 @@ function jobOnClick(jobnum)
 			<div class="middiv" style="background-color: white;">
 				<a href="/list?user=<%=user%>" class="scrolly-middle"><img class="middivimg" src="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/img/Art_Supervisor.jpg" alt=""/>
 					<div class="middivtext">
-						<h4 style="text-decoration: underline; font-weight: bold;">Art_Supervisor</h2><br>
+						<h4 style="text-decoration: underline; font-weight: bold;">Art_Supervisor</h4><br>
 						<p class="whitebox">
 							Art director is the title for a variety of similar job functions in theater, advertising, marketing, publishing, fashion, film and television, the Internet, and video games. It is the charge of a sole art director to supervise and unify the vision. In particular, the art director is in charge of the overall visual appearance and how it communicates visually, stimulates moods, contrasts features, and psychologically appeals to a target audience.
 						</p>
