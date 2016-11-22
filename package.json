@@ -30,7 +30,7 @@
     "express": "^4.14.0",
     "morgan": "^1.7.0",
     "pug": "^2.0.0-beta6",
-    "serve-favicon": "^2.3.0",
+    "serve-favicon": "^2.3.2",
     "ejs":"^2.3.3",
     "async": "^2.0.0-rc.6",
     "bcrypt-nodejs": "0.0.3",
