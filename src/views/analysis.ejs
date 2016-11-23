@@ -59,10 +59,9 @@
 		      <a class="navbar-brand" href="#" style="color: white;">JopShopper</a>
 		    </div>
 		    <ul class="nav navbar-nav">
-		    <li><a href="/list?user=<%=user%>">Home</a></li>
-		    <li><a href="/index">JOB FINDING</a></li>
-		    <li><a href="/list?user=<%=user%>">JOB CONTENT</a></li>
-		    <li class="active"><a href="/analysis?user=<%=user%>">ANALYSIS</a></li>
+		    <li><a href="/index">새로 시작하기</a></li>
+		    <li><a href="/list?user=<%=user%>">직업 소개</a></li>
+		    <li class="active"><a href="/analysis?user=<%=user%>">성향 분석</a></li>
 		    </ul>
 		    <!--ul class="nav navbar-nav navbar-right">
 		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -101,7 +100,7 @@
                 	<div class="circleStatsItemBox red" style="height: 25vh; width: 18vw;">
 						<div class="header" style="height: 15%;" ><%=workst[0].key%></div>
 						<span class="percent">point</span>
-						<div class="circleStat" style="height: 70%; padding-top: 5%;">
+						<div class="circleStat" style="height: 70%; padding-top: 5%;display:inline-block;">
                     		<input type="text" value="<%=workst[0].value%>" class="whiteCircle"/>
 						</div>
 						<div class="footer" style="height: 15%;">
@@ -122,7 +121,7 @@
                 	<div class="circleStatsItemBox yellow" style="height: 25vh; width: 18vw;">
 						<div class="header" style="height: 15%;" ><%=workst[1].key%></div>
 						<span class="percent">Point</span>
-						<div class="circleStat" style="height: 70%; padding-top: 5%;">
+						<div class="circleStat" style="height: 70%; padding-top: 5%;display:inline-block;">
                     		<input type="text" value="<%=workst[1].value%>" class="whiteCircle"/>
 						</div>
 						<div class="footer" style="height: 15%;">
@@ -142,7 +141,7 @@
                 	<div class="circleStatsItemBox orange" style="height: 25vh; width: 18vw;">
 						<div class="header" style="height: 15%;" ><%=workst[2].key%></div>
 						<span class="percent">Point</span>
-						<div class="circleStat" style="height: 70%; padding-top: 5%;">
+						<div class="circleStat" style="height: 70%; padding-top: 5%;display:inline-block;">
                     		<input type="text" value="<%=workst[2].value%>" class="whiteCircle"/>
 						</div>
 						<div class="footer" style="height: 15%;">
@@ -162,7 +161,7 @@
                 	<div class="circleStatsItemBox green" style="height: 25vh; width: 18vw;">
 						<div class="header" style="height: 15%;" ><%=workst[3].key%></div>
 						<span class="percent">Point</span>
-						<div class="circleStat" style="height: 70%; padding-top: 5%;">
+						<div class="circleStat" style="height: 70%; padding-top: 5%;display:inline-block;">
                     		<input type="text" value="<%=workst[3].value%>" class="whiteCircle"/>
 						</div>
 						<div class="footer" style="height: 15%;">

@@ -18,10 +18,9 @@
 		      <a class="navbar-brand" href="#" style="color: white;">JopShopper</a>
 		    </div>
 		    <ul class="nav navbar-nav">
-		    <li><a href="/list?user=<%=user%>">Home</a></li>
-		    <li><a href="/index">JOB FINDING</a></li>
-		    <li class="active"><a href="/list?user=<%=user%>">JOB CONTENT</a></li>
-		    <li><a href="/analysis?user=<%=user%>">ANALYSIS</a></li>
+		    <li><a href="/index">새로 시작하기</a></li>
+		    <li class="active"><a href="/list?user=<%=user%>">직업 소개</a></li>
+		    <li><a href="/analysis?user=<%=user%>">성향 분석</a></li>
 		    </ul>
 		    <!--ul class="nav navbar-nav navbar-right">
 		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -33,7 +32,7 @@
 	<div style="text-align:center;margin:0 auto; padding-top: 10vh;">
 		<%for(var i=1;i<=picnum;i++){
 			%>
-			<div style="display:inline-block;width:50%;"><img border="0" src ="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/content/<%=pic%>/슬라이드<%=i%>.PNG"></div>
+			<div style="display:inline-block;width:50%;"><img border="0" style="width:100%"src ="https://storage.googleapis.com/jobshopper-test1.appspot.com/public/content/<%=pic%>/슬라이드<%=i%>.PNG"></div>
 		<%}%>
 	</div>
 	<div style="text-align:center;margin:20px;">
