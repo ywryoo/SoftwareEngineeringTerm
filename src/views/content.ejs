@@ -51,7 +51,7 @@
 			<input type="hidden" name = "user" value="<%=user%>"/>
 			<%for(var i=0;i<28;i++)
 			{%>
-				<input type="hidden" name="point[<%=user%>]" value="<%=point[i]/5%>"/>
+				<input type="hidden" name="point[<%=user%>]" value="<%=-point[i]/5%>"/>
 			<%}
 			%>
 			<button type="submit" class="btn btn-primary">이 직업 별로에요</button>

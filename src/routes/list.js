@@ -26,15 +26,17 @@ router.get('/list',function(request,response){
         {
             var my=data.point[request.user];
             var other=data.conPoint[i];
+            var minn=0;
             var maxx=1;
             var plus=0;
             for(j=0;j<28;j++)
             {
                 if(maxx<my[j])maxx=my[j];
+                if(minn>my[j])minn=my[j];
             }
             for(j=0;j<28;j++)
             {
-                my[j]=my[j]*100/maxx;
+                my[j]=(my[j]-minn)*100/maxx;
                 if(other[j]>my[j]) plus+=other[j]-my[j];
                 else plus+=my[j]-other[j];
             }
