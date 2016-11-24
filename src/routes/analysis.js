@@ -15,17 +15,45 @@ router.get('/analysis',function(request,response){
     var WorkStyles=[];
     var WorkValues=[];
     var i;
+    var min=0;
     var max=1;
-    for(i=0;i<28;i++)
+    for(i=0;i<6;i++)
     {
         if(max<point[user][i])max=point[user][i];
+        if(min>point[user][i])min=point[user][i];
     }
-    for(i=0;i<28;i++)
+    for(i=0;i<6;i++)
     {
-        point[user][i]/=max;
+        point[user][i]-=min;
+        point[user][i]/=(max-min);
         point[user][i]*=100;
         point[user][i]=parseInt(point[user][i]);
     }
+    for(i=0;i<16;i++)
+    {
+        if(max<point[user][i+6])max=point[user][i+6];
+        if(min>point[user][i+6])min=point[user][i+6];
+    }
+    for(i=0;i<16;i++)
+    {
+        point[user][i+6]-=min;
+        point[user][i+6]/=(max-min);
+        point[user][i+6]*=100;
+        point[user][i+6]=parseInt(point[user][i+6]);
+    }
+    for(i=0;i<6;i++)
+    {
+        if(max<point[user][i+22])max=point[user][i+22];
+        if(min>point[user][i+22])min=point[user][i+22];
+    }
+    for(i=0;i<6;i++)
+    {
+        point[user][i+22]-=min;
+        point[user][i+22]/=(max-min);
+        point[user][i+22]*=100;
+        point[user][i+22]=parseInt(point[user][i+22]);
+    }
+
     for(i=0;i<6;i++)
     {
         Interest[i]={key:title[i],value:point[user][i]};
