@@ -9,8 +9,8 @@ router.get('/analysis',function(request,response){
     user = request.param("user");
     else user = 0;
     var title=["실재적 유형","탐구적 유형","예술적 유형","사회적 유형","기업적 유형","관습적 유형",
-    "성취/노력","융통성/유연함","분석적 생각","꼼꼼함","배려깊음","협력","Dependability","Independence(Work Style)","Initiative","Innovation","Integrity","Leadership","Persistence","Self Control","Social Orientation","Stress Tolerance",
-    "Achievement","Independence (Work Value)","Recognition","Relationships","Support","Working Conditions"];
+    "성취/노력","융통성/유연함","분석적 생각","꼼꼼함","배려깊음","협동심","Dependability","Independence(Work Style)","Initiative","Innovation","Integrity","Leadership","Persistence","Self Control","Social Orientation","Stress Tolerance",
+    "자기계발 (Achivement)","자율성 (Independence)","사회적 인정 (Recognition)","인간관계 (Relationships)","사회봉사 (Support)","근무조건 (WorkingConditions)"];
     var Interest=[];
     var WorkStyles=[];
     var WorkValues=[];
@@ -20,6 +20,12 @@ router.get('/analysis',function(request,response){
     "사람을 헌신적으로 보살펴 주고, 도와주고, 어울리기 좋아하며 친절하고 정이 많아서 이타심이 많고, 희생적이다.",
     "언어적성이 높은 유형으로 지배력, 통솔력, 지도력이 있으며, 말을 잘하고, 주장적, 설득적 이며, 경쟁적, 야심적이다.",
     "정확하고, 빈틈없고 책임감이 강하다. 또한 조심성과 계획성이 있고 원리원칙주의며 보수적이다. 안전, 완벽을 추구한다.",];
+    var desc2=["직업을 통해 더 배우고 발전할 기회를 얻고 싶어한다.",
+    "일하는 시간과 방식에 대해서 스스로 결정하는 것을 선호한다.",
+    "내가 한 일을 다른 사람에게 인정받고 싶어한다.",
+    "나와 맞는 사람들과 일하는 것을 중요하게 생각한다.",
+    "다른 사람들에게 도움이 되는 일을 하는 것을 선호한다.",
+    "나에게 맞는 근무조건을 중요하게 생각한다.",];
     var i;
     var min=0;
     var max=1;
@@ -74,7 +80,7 @@ router.get('/analysis',function(request,response){
     }
     for(i=0;i<6;i++)
     {
-        WorkValues[i]={key:title[22+i],value:point[user][22+i]};
+        WorkValues[i]={key:title[22+i],value:point[user][22+i],desc:desc2[i]};
     }
     var InterestSort = Interest.slice(0).sort(function(a, b) {return b.value - a.value;});
     var WorkStylesSort=WorkStyles.slice(0).sort(function(a, b) {return b.value - a.value;});
